@@ -20,14 +20,9 @@ public class Telephone extends Article {
 		this.modele = modele;
 	}
 
-	public Telephone() {
-		super();
-		this.modele = "Aucun";
-		this.operateur = "Aucun"; 
-	}
-
-	public Telephone(String operateur, String modele) {
-		super();
+	public Telephone(int reference, String intitule, double prix,
+			String operateur, String modele) {
+		super(reference, intitule, prix);
 		this.operateur = operateur;
 		this.modele = modele;
 	}

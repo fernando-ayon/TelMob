@@ -2,7 +2,7 @@ package com.telmob.classes;
 
 import java.util.HashSet;
 
-public class Accessoire extends Article {
+public abstract class Accessoire extends Article {
 	private HashSet<Telephone> modeleCompatible;
 
 	public HashSet<Telephone> getModeleCompatible() {
@@ -13,16 +13,19 @@ public class Accessoire extends Article {
 		this.modeleCompatible = modeleCompatible;
 	}
 
-	public Accessoire(HashSet<Telephone> modeleCompatible) {
-		super();
+	public Accessoire(int reference, String intitule, double prix,
+			HashSet<Telephone> modeleCompatible) {
+		super(reference, intitule, prix);
 		this.modeleCompatible = modeleCompatible;
 	}
 
-	//ici
-	public Accessoire() {
-		super();
+	@Override
+	public String toString() {
+		String modeles = "";
+		for (Telephone i : modeleCompatible) {
+			modeles += i.getIntitule() + ", ";
+		}
+		return super.toString() + " Téléphones compatibles : " + modeles;
 	}
-	
-	
 	
 }
