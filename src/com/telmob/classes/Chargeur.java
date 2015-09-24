@@ -14,7 +14,7 @@ public class Chargeur extends Accessoire {
 	}
 
 	public Chargeur(int reference, String intitule, double prix,
-			HashSet<Telephone> modeleCompatible, String type) {
+			HashSet<String> modeleCompatible, String type) {
 		super(reference, intitule, prix, modeleCompatible);
 		this.type = type;
 	}

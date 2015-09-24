@@ -19,30 +19,30 @@ public class Magasin {
 	public static void main(String[] args) {
 		ListeArticles l = new ListeArticles();
 		
-		Article tel = new Telephone(15575, "iPhone 4", 35.50, "Free", "Apple");
-		Article tel1 = new Telephone(15576, "iPhone 5", 38.50, "Orange", "Apple");
-		HashSet<Telephone> modeles = new HashSet<Telephone>();
-		modeles.add((Telephone) tel);
-		modeles.add((Telephone) tel1);
-//		
-//		Accessoire coque = new Coque(17256, 
-//					"Coque rose iPhone 4", 12.90,
-//					modeles, " rose");
+		String tel = new String("Apple");
+		HashSet<String> modeles = new HashSet<String>();
+		modeles.add(tel);
+		
+		Accessoire coque = new Coque(17256, 
+					"Aoque rose iPhone 4", 5.90,
+					modeles, " rose");
 //		System.out.println(coque);
 //
-//		Accessoire cordon = new Cordon(45885, "Cordon bleue", 
-//				5.2, modeles, 25);
+		Accessoire cordon = new Cordon(45885, "Bordon bleue", 
+				6.2, modeles, 25);
 //		System.out.println(cordon);
 //		
-//		Accessoire charg = new Chargeur(58514, "chargeur pour iPhones", 
-//				35.2, modeles, "normal");
+		Accessoire charg = new Chargeur(58514, "chargeur pour iPhones", 
+				5.2, modeles, "normal");
 //		System.out.println(charg);
 //
-//		System.out.println(l.ajoutArticle(charg));
-//		System.out.println(l.ajoutArticle(coque));
-//		System.out.println(l.ajoutArticle(cordon));
+		l.ajoutArticle(charg);
+		l.ajoutArticle(coque);
+		l.ajoutArticle(cordon);
 		
-		
+		l.tousLesArticles_ParIntitule(false);
+		l.tousLesArticles_ParPrix(true);
+		l.tousLesArticles_ParRef(false);
 		
 	}
 

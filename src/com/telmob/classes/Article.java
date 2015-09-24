@@ -1,5 +1,7 @@
 package com.telmob.classes;
 
+import java.util.Comparator;
+
 public abstract class Article implements Comparable<Article>{
 	private int reference;
 	private String intitule;
@@ -55,7 +57,28 @@ public abstract class Article implements Comparable<Article>{
 	
 	@Override
 	public int compareTo(Article a) {
-		return this.intitule.compareToIgnoreCase(a.intitule);
-	}	
+		return Comparators.INTITULE.compare(this, a);
+	}
+	
+	public static class Comparators {
+		public static Comparator<Article> INTITULE = new Comparator<Article>() {
+            @Override
+            public int compare(Article a1, Article a2) {
+                return a1.intitule.compareTo(a2.intitule);
+            }
+        };
+        public static Comparator<Article> PRIX = new Comparator<Article>() {
+            @Override
+            public int compare(Article a1, Article a2) {
+                return (int) (a1.prix - a2.prix);
+            }
+        };
+        public static Comparator<Article> REFERENCE = new Comparator<Article>() {
+            @Override
+            public int compare(Article a1, Article a2) {
+                return a1.reference - a2.reference;
+            }
+        };
+	}
 	
 }

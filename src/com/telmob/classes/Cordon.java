@@ -14,7 +14,7 @@ public class Cordon extends Accessoire {
 	}
 
 	public Cordon(int reference, String intitule, double prix,
-			HashSet<Telephone> modeleCompatible, int longueur) {
+			HashSet<String> modeleCompatible, int longueur) {
 		super(reference, intitule, prix, modeleCompatible);
 		this.longueur = longueur;
 	}

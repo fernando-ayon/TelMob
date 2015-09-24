@@ -14,7 +14,7 @@ public class Coque extends Accessoire {
 	}
 
 	public Coque(int reference, String intitule, double prix,
-			HashSet<Telephone> modeleCompatible, String couleur) {
+			HashSet<String> modeleCompatible, String couleur) {
 		super(reference, intitule, prix, modeleCompatible);
 		this.couleur = couleur;
 	}
