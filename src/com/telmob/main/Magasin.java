@@ -24,19 +24,24 @@ public class Magasin {
 		HashSet<Telephone> modeles = new HashSet<Telephone>();
 		modeles.add((Telephone) tel);
 		modeles.add((Telephone) tel1);
+//		
+//		Accessoire coque = new Coque(17256, 
+//					"Coque rose iPhone 4", 12.90,
+//					modeles, " rose");
+//		System.out.println(coque);
+//
+//		Accessoire cordon = new Cordon(45885, "Cordon bleue", 
+//				5.2, modeles, 25);
+//		System.out.println(cordon);
+//		
+//		Accessoire charg = new Chargeur(58514, "chargeur pour iPhones", 
+//				35.2, modeles, "normal");
+//		System.out.println(charg);
+//
+//		System.out.println(l.ajoutArticle(charg));
+//		System.out.println(l.ajoutArticle(coque));
+//		System.out.println(l.ajoutArticle(cordon));
 		
-		Accessoire coque = new Coque(17256, 
-					"Coque rose iPhone 4", 12.90,
-					modeles, " rose");
-		System.out.println(coque);
-
-		Accessoire cordon = new Cordon(45885, "Cordon bleue", 
-				5.2, modeles, 25);
-		System.out.println(cordon);
-		
-		Accessoire charg = new Chargeur(58514, "chargeur pour iPhones", 
-				35.2, modeles, "normal");
-		System.out.println(charg);
 		
 		
 	}

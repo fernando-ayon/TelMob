@@ -1,6 +1,6 @@
 package com.telmob.classes;
 
-public abstract class Article {
+public abstract class Article implements Comparable<Article>{
 	private int reference;
 	private String intitule;
 	private double prix;
@@ -41,5 +41,21 @@ public abstract class Article {
 		return "référence : " + reference + "; intitulé : " + intitule
 				+ " ; \n prix : " + prix + " euros ; ";
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if ( o instanceof Article ) {
+			Article a = (Article)o;
+			if ((this.reference == a.reference) && 
+					this.intitule.equalsIgnoreCase(a.intitule))
+				return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public int compareTo(Article a) {
+		return this.intitule.compareToIgnoreCase(a.intitule);
+	}	
 	
 }
