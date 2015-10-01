@@ -1,8 +1,11 @@
 package com.telmob.traitementArticles;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 import com.telmob.classes.Article;
 
@@ -39,42 +42,38 @@ public class ListeArticles {
 	}
 
 	public void tousLesArticles_ParRef(boolean isCroissant) {
-		Comparator<Article> c;
 		
 		if (isCroissant) {
-			System.out.println("Affichage de la liste d'articles par référence de manière croissant");
+			System.out.println("Affichage de la liste d'articles par reference de maniere croissant");
 			Collections.sort(lesArticles, Article.Comparators.REFERENCE);
 		} else {
-			System.out.println("Affichage de la liste d'articles par référence de manière décroissant");
-			Collections.sort(lesArticles, Article.Comparators.REFERENCE);
+			System.out.println("Affichage de la liste d'articles par reference de maniere decroissant");
+			Collections.sort(lesArticles, Collections.reverseOrder(Article.Comparators.REFERENCE));
 		}
 		
 		this.affiche();
 	}
 	
 	public void tousLesArticles_ParIntitule(boolean isCroissant) {
-		Comparator<Article> c;
 		
 		if (isCroissant) {
-			System.out.println("Affichage de la liste d'articles par intitulé de manière croissant");
-			c = new CompareArticleParIntitule();
+			System.out.println("Affichage de la liste d'articles par intitule de maniere croissant");
+			Collections.sort(lesArticles, Article.Comparators.INTITULE);
 		} else {
-			System.out.println("Affichage de la liste d'articles par intitulé de manière décroissant");
-			c = Collections.reverseOrder(new CompareArticleParIntitule());
-		}
+			System.out.println("Affichage de la liste d'articles par intitule de maniere decroissant");
+			Collections.sort(lesArticles, Collections.reverseOrder(Article.Comparators.INTITULE));		}
 		
 		this.affiche();
 	}
 
 	public void tousLesArticles_ParPrix(boolean isCroissant) {
-		Comparator<Article> c;
 		
 		if (isCroissant) {
-			System.out.println("Affichage de la liste d'articles par prix de manière croissant");
-			c = new CompareArticleParPrix();
+			System.out.println("Affichage de la liste d'articles par prix de maniere croissant");
+			Collections.sort(lesArticles, Article.Comparators.PRIX);
 		} else {
-			System.out.println("Affichage de la liste d'articles par prix de manière décroissant");
-			c = Collections.reverseOrder(new CompareArticleParPrix());
+			System.out.println("Affichage de la liste d'articles par prix de maniere decroissant");
+			Collections.sort(lesArticles, Collections.reverseOrder(Article.Comparators.PRIX));		
 		}
 		
 		this.affiche();
@@ -83,12 +82,27 @@ public class ListeArticles {
 	public void affiche() {
 		for (Article a : lesArticles) {
 			System.out.println("+---------------------------------------");
-			System.out.println("|");
-			System.out.println("| Intitulé : " + a.getIntitule());
-			System.out.println("| Référence : " + a.getReference());
-			System.out.println("| Prix : " + a.getPrix());
-			System.out.println("|");
+			System.out.println(a.toString());
 			System.out.println("+---------------------------------------");
 		}
+	}
+	
+	public static void sauvegarde(String fileDest, ListeArticles liste) throws IOException {
+		File file = new File(fileDest);
+		
+		// si le fichier n'existe pas, creer un nouveau fichier
+		if (!file.exists()) {
+			file.createNewFile();
+		}
+		
+		FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		// obtenir chaque article de la liste et ecrire dans le fichier
+		for (Article a : liste.getLesArticles()) {
+			bw.write(a.toString());
+		}
+		
+		bw.close();
 	}
 }

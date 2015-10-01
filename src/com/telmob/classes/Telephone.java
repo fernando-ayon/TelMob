@@ -16,6 +16,11 @@ public class Telephone extends Article {
 		return modele;
 	}
 	
+	@Override
+	public String toString() {
+		return super.toString() + " modele : " + modele;
+	}
+
 	public void setModele(String modele) {
 		this.modele = modele;
 	}

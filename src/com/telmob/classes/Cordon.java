@@ -23,7 +23,5 @@ public class Cordon extends Accessoire {
 	public String toString() {
 		return super.toString() + " longueur : " + longueur;
 	}
-	
-	
 
 }

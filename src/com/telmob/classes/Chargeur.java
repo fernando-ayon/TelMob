@@ -3,18 +3,18 @@ package com.telmob.classes;
 import java.util.HashSet;
 
 public class Chargeur extends Accessoire {
-	private String type;
+	private Type type;
 
-	public String getType() {
+	public Type getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(Type type) {
 		this.type = type;
 	}
 
 	public Chargeur(int reference, String intitule, double prix,
-			HashSet<String> modeleCompatible, String type) {
+			HashSet<String> modeleCompatible, Type type) {
 		super(reference, intitule, prix, modeleCompatible);
 		this.type = type;
 	}

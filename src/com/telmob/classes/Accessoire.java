@@ -21,11 +21,12 @@ public abstract class Accessoire extends Article {
 
 	@Override
 	public String toString() {
-		String modeles = "";
+		String modeles = "[";
 		for (String i : modeleCompatible) {
-			modeles += i + ", ";
+			modeles += i + ",";
 		}
-		return super.toString() + " Téléphones compatibles : " + modeles;
+		modeles += "]";
+		return super.toString() + " Telephones compatibles : " + modeles;
 	}
 	
 }

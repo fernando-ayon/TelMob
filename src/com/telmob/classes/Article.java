@@ -40,8 +40,8 @@ public abstract class Article implements Comparable<Article>{
 	
 	@Override
 	public String toString() {
-		return "référence : " + reference + "; intitulé : " + intitule
-				+ " ; \n prix : " + prix + " euros ; ";
+		return "\r\n\r\n reference : " + reference + "; \r\n intitule : " + intitule
+				+ " ; \r\n prix : " + prix + " euros ; \r\n";
 	}
 	
 	@Override
@@ -70,7 +70,7 @@ public abstract class Article implements Comparable<Article>{
         public static Comparator<Article> PRIX = new Comparator<Article>() {
             @Override
             public int compare(Article a1, Article a2) {
-                return (int) (a1.prix - a2.prix);
+                return (a1.prix > a2.prix) ? 1 : (a1.prix < a2.prix) ? -1 : 0;
             }
         };
         public static Comparator<Article> REFERENCE = new Comparator<Article>() {
