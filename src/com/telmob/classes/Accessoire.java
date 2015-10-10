@@ -12,7 +12,11 @@ public abstract class Accessoire extends Article {
 	public void setModeleCompatible(HashSet<String> modeleCompatible) {
 		this.modeleCompatible = modeleCompatible;
 	}
-
+	
+	public void ajoutModeleCompatible(String modele) {
+		this.modeleCompatible.add(modele);
+	}
+	
 	public Accessoire(int reference, String intitule, double prix,
 			HashSet<String> modeleCompatible) {
 		super(reference, intitule, prix);

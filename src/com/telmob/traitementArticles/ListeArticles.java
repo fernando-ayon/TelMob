@@ -29,14 +29,29 @@ public class ListeArticles {
 		lesArticles = new ArrayList<Article>();
 	}
 	
+	public boolean estDansLaListe(Article a) {
+		if (lesArticles.contains(a)) {
+			return true;
+		} 
+		return false;
+	}
+	
 	public Article ajoutArticle(Article a) {
-		lesArticles.add(a);
+		if (estDansLaListe(a)) {
+			System.out.println("L'article existe deja");
+		} else {
+			lesArticles.add(a);
+			System.out.println("Article ajoute");
+		}
 		return a;
 	}
 	
 	public Article supprArticle(Article a) {
-		if(lesArticles.contains(a)) {
+		if(estDansLaListe(a)) {
 			lesArticles.remove(a);
+			System.out.println("Article supprime");
+		} else {
+			System.out.println("L'article recherche n'est pas dans la liste");
 		}
 		return a;
 	}
