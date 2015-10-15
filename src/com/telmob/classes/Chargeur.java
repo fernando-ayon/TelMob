@@ -5,10 +5,18 @@ import java.util.HashSet;
 public class Chargeur extends Accessoire {
 	private Type type;
 
+	/**
+    Renvoie le type de chargeur
+	    @return Le type d'un chargeur
+	 */
 	public Type getType() {
 		return type;
 	}
 
+	/**
+    Permet de modifier le type d'un article
+	    @param Le nouveau type de l'article
+	 */
 	public void setType(Type type) {
 		this.type = type;
 	}
@@ -19,6 +27,10 @@ public class Chargeur extends Accessoire {
 		this.type = type;
 	}
 
+	/**
+    Permet de lister l
+	    @return La reference de l'article
+	 */
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

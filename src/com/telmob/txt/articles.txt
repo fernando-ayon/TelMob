@@ -1,11 +1,6 @@
 
 
- reference : 1; 
- intitule : 1 ; 
- prix : 1.0 euros ; 
- modele : 1
-
- reference : 2; 
- intitule : 2 ; 
- prix : 2.0 euros ; 
- modele : 2
+ reference : 56; 
+ intitule : Iphone ; 
+ prix : 800.0 euros ; 
+ modele : 5s

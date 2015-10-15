@@ -14,30 +14,58 @@ public abstract class Article implements Comparable<Article>{
 		this.prix = prix;
 	}
 
+	/**
+    Renvoie la reference d'un article
+	    @return La reference de l'article
+	 */
 	public int getReference() {
 		return reference;
 	}
 	
+	/**
+	   Permet de modifier la reference d'un article
+		    @param reference La reference de l'article
+		 */
 	public void setReference(int reference) {
 		this.reference = reference;
 	}
 	
+	/**
+    Renvoie l'intitulé d'un article
+	    @return L'intitulé de l'article
+	 */
 	public String getIntitule() {
 		return intitule;
 	}
 	
+	/**
+	   Permet de modifier l'intitulé d'un article
+		@param intitule L'intitulé de l'article
+	 */
 	public void setIntitule(String intitule) {
 		this.intitule = intitule;
 	}
 	
+	/**
+    Renvoie le prix d'un article
+	    @return Le prix de l'article
+	 */
 	public double getPrix() {
 		return prix;
 	}
 	
+	/**
+	   Permet de modifier le prix d'un article
+		@param prix Le prix de l'article
+	 */
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
 	
+	/**
+    Permet d'obtenir la description d'un article
+    @return La référence, l'intitulé et le prix de l'article
+ */
 	@Override
 	public String toString() {
 		return "\r\n\r\n reference : " + reference + "; \r\n intitule : " + intitule

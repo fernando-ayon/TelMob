@@ -12,14 +12,26 @@ import com.telmob.classes.Article;
 public class ListeArticles {
 	private ArrayList<Article> lesArticles;
 
+	/**
+	 * Retourne le tableau des articles
+	 * @return ArrayList
+	 */
 	public ArrayList<Article> getLesArticles() {
 		return lesArticles;
 	}
 
+	/**
+	 * Redefini le tableau des articles
+	 * @param lesArticles
+	 */
 	public void setLesArticles(ArrayList<Article> lesArticles) {
 		this.lesArticles = lesArticles;
 	}
 
+	/**
+	 * Constructeur
+	 * @param lesArticles
+	 */
 	public ListeArticles(ArrayList<Article> lesArticles) {
 		super();
 		this.lesArticles = lesArticles;
@@ -29,6 +41,11 @@ public class ListeArticles {
 		lesArticles = new ArrayList<Article>();
 	}
 	
+	/**
+	 * Verifie si un article est dans la liste
+	 * @param a Article
+	 * @return boolean
+	 */
 	public boolean estDansLaListe(Article a) {
 		if (lesArticles.contains(a)) {
 			return true;
@@ -36,6 +53,11 @@ public class ListeArticles {
 		return false;
 	}
 	
+	/**
+	 * Ajout d'un article dans le tableau
+	 * @param a Article
+	 * @return 
+	 */
 	public Article ajoutArticle(Article a) {
 		if (estDansLaListe(a)) {
 			System.out.println("L'article existe deja");
@@ -46,6 +68,11 @@ public class ListeArticles {
 		return a;
 	}
 	
+	/**
+	 * Suppression d'un article dans le tableau
+	 * @param a Article
+	 * @return
+	 */
 	public Article supprArticle(Article a) {
 		if(estDansLaListe(a)) {
 			lesArticles.remove(a);
@@ -56,6 +83,10 @@ public class ListeArticles {
 		return a;
 	}
 
+	/**
+	 * Tri des article par leur référence
+	 * @param isCroissant boolean 
+	 */
 	public void tousLesArticles_ParRef(boolean isCroissant) {
 		
 		if (isCroissant) {
@@ -69,6 +100,10 @@ public class ListeArticles {
 		this.affiche();
 	}
 	
+	/**
+	 * Tri des article par leur intitulé
+	 * @param isCroissant
+	 */
 	public void tousLesArticles_ParIntitule(boolean isCroissant) {
 		
 		if (isCroissant) {
@@ -81,6 +116,10 @@ public class ListeArticles {
 		this.affiche();
 	}
 
+	/**
+	 * Tri des articles par leur prix
+	 * @param isCroissant
+	 */
 	public void tousLesArticles_ParPrix(boolean isCroissant) {
 		
 		if (isCroissant) {
@@ -94,6 +133,9 @@ public class ListeArticles {
 		this.affiche();
 	}
 	
+	/**
+	 * Affichage de l'ensemble des articles
+	 */
 	public void affiche() {
 		for (Article a : lesArticles) {
 			System.out.println("+---------------------------------------");
@@ -102,6 +144,12 @@ public class ListeArticles {
 		}
 	}
 	
+	/**
+	 * Sauvegarde du tableau des articles dans un fichier texte
+	 * @param fileDest String Fichier de destination
+	 * @param liste ListeArticles le tableau des articles à enregistrer
+	 * @throws IOException
+	 */
 	public static void sauvegarde(String fileDest, ListeArticles liste) throws IOException {
 		File file = new File(fileDest);
 		

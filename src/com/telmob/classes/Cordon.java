@@ -5,10 +5,18 @@ import java.util.HashSet;
 public class Cordon extends Accessoire {
 	private int longueur;
 
+	/**
+	 * Retourne la longeur du cordon
+	 * @return longueur
+	 */
 	public int getLongeur() {
 		return longueur;
 	}
 
+	/**
+	 * Defini la longeur d'un cordon
+	 * @param longeur
+	 */
 	public void setLongeur(int longeur) {
 		this.longueur = longeur;
 	}

@@ -15,7 +15,12 @@ import com.telmob.traitementArticles.ListeArticles;
 
 public class Magasin {
 	
-	//
+	/**
+	 * 
+	 * @param sc ecoute d'une entrée
+	 * @param opc lecture de l'entier
+	 * @return integer
+	 */
 	public int ecrireInt(Scanner sc, int opc){
 		while (sc.hasNext()) {
 			if(sc.hasNextInt()) { 
@@ -29,6 +34,11 @@ public class Magasin {
 		return opc;
 	}
 	
+	/**
+	 * Methode permettant de naviguer dans le menu
+	 * 
+	 * Chaque option est associé a un Case
+	 */
 	public void menu() {
 		ListeArticles lesArticles = new ListeArticles();
 		Scanner sc = new Scanner(System.in);
@@ -290,6 +300,10 @@ public class Magasin {
 		} while (opc  != 0);
 	}
 	
+	/**
+	 * Methode Main
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Magasin m = new Magasin();
 		m.menu();
